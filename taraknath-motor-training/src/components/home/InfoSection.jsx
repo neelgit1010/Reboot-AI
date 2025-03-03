@@ -45,7 +45,7 @@ const InfoSection = () => {
         ))}
       </div>
 
-      <div className="md:hidden w-auto h-auto p-12">
+      <div className="md:hidden w-full mx:auto h-auto p-12">
         <Slider {...settings}>
           {cards.map((card, index) => (
             <InfoCard key={index} icon={card.icon} title={card.title} />

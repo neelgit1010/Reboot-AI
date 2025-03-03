@@ -1,17 +1,12 @@
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { FaMobile, FaWhatsapp } from "react-icons/fa";
 import { MdCancel, MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
 import Link from "next/link";
 import EnquiryFormCard from "../cards/EnquiryFormCard";
-import { useScroll } from "@/store/ScrollContext";
 
 const Footer = () => {
-  const { aboutRef } = useScroll();
-  const scrollToSection = () => {
-    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const quickas = [
     { name: "Home", path: "/" },
@@ -55,15 +50,24 @@ const Footer = () => {
               <div className=" text-defined-brown font-semibold">
                 <div className="flex items-center gap-2">
                   <FaWhatsapp className="text-defined-black" />
-                  <span>+91 82507 42988</span>
+                  <Link href="https://wa.me/918250742988">
+                    {" "}
+                    <span> +91 82507 42988</span>
+                  </Link>
                 </div>
                 <div className="flex items-center gap-2">
                   <FaMobile className="text-defined-black" />
-                  <span>+91 82507 42988</span>
+                  <Link href="tel:918250742988">
+                    {" "}
+                    <span> +91 82507 42988</span>
+                  </Link>
                 </div>
                 <div className="flex items-center gap-2">
                   <MdEmail className="text-defined-black" />
-                  <span>ntmtssiliguri@gmail.com</span>
+                  <Link href="mailto:ntmtssiliguri@gmail.com">
+                    {" "}
+                    <span>ntmtssiliguri@gmail.com</span>
+                  </Link>
                 </div>
                 <div className="flex gap-2 w-full xl:w-[80%]">
                   <IoLocationSharp size={20} className="text-defined-black" />
@@ -91,10 +95,10 @@ const Footer = () => {
                   ].map((item, index) => (
                     <li
                       key={index}
-                      className="py-2 hover:underline hover:text-defined-black font-semibold"
+                      className="py-2 hover:text-defined-black font-semibold"
                     >
                       <Link href="/packages">
-                        {">"}
+                        {"> "}
                         {item}
                       </Link>
                     </li>
@@ -109,10 +113,10 @@ const Footer = () => {
                   {quickas.map((item, index) => (
                     <li
                       key={index}
-                      className="py-2 hover:underline hover:text-defined-black font-semibold"
+                      className="py-2 hover:text-defined-black font-semibold"
                     >
                       <Link href={item.path}>
-                        {"> "}
+                        {">  "}
                         {item.name}
                       </Link>
                     </li>
@@ -134,7 +138,7 @@ const Footer = () => {
               ></iframe>
               <button
                 onClick={openModal}
-                className="bg-defined-green text-white font-bold px-4 py-2 rounded w-full"
+                className="bg-defined-green hover:cursor-pointer text-white font-bold px-4 py-2 rounded w-full"
               >
                 Pay Now
               </button>
@@ -181,8 +185,8 @@ const Footer = () => {
         <div className="text-sm text-defined-brown flex flex-col md:flex-row justify-between items-center">
           <h1>
             © 2025{" "}
-            <span className="hover:underline font-bold hover:text-defined-black">
-              <Link href="/"> Mintu Garage</Link>
+            <span className="font-bold hover:text-defined-black">
+              <Link href="/">New Taraknath Moror Training School</Link>
             </span>{" "}
             - All Rights Reserved
           </h1>
@@ -192,7 +196,6 @@ const Footer = () => {
               <a
                 target="_blank"
                 href="https://rebootai.in/"
-                className="hover:underline"
               >
                 Reboot AI Pvt. Ltd.
               </a>

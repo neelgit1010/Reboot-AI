@@ -1,38 +1,49 @@
 import Image from "next/image";
 import EnquiryFormCard from "../cards/EnquiryFormCard";
+import Link from "next/link";
 
 const ServiceSection = () => {
   const items = [
     {
       title:
         "New Driving License - 4 Wheeler - 2500 With Exam, Without Exam - 4500",
+      link: "/",
     },
     {
       title: "2 Wheeler - 2000 With Exam, Without Exam - 4000",
+      link: "/",
     },
     {
       title: "Duplicate Driving License - 1500",
+      link: "/",
     },
     {
       title: "Driving License Renewal - 1200",
+      link: "/",
     },
     {
       title: "Re-Registration - Call for more details",
+      link: "tel:918250742988",
     },
     {
       title: "Name Transfer - Call for more details",
+      link: "tel:918250742988",
     },
     {
       title: "Vehicle fitness  - Call for more details",
+      link: "tel:918250742988",
     },
     {
       title: "Permit details - Call for more details",
+      link: "tel:918250742988",
     },
     {
       title: "Car Authorization Letter - Online 300 Offline 400",
+      link: "/",
     },
     {
       title: "All Vehicle",
+      link: "/",
     },
   ];
   return (
@@ -62,7 +73,7 @@ const ServiceSection = () => {
                     width={200}
                     height={200}
                     alt="package-img"
-                    className="w-auto h-[1.2rem] object-cover "
+                    className="w-auto h-[1.2rem] object-cover"
                   />
                   <h1 className="text-2xl font-bold text-start">
                     Driving License 24 Wheelers
@@ -77,7 +88,7 @@ const ServiceSection = () => {
                       height={20}
                       className="w-auto h-[1rem] object-cover"
                     />
-                    <p>{item.title}</p>
+                    <Link href={item.link}>{item.title}</Link>
                   </div>
                 ))}
             </div>

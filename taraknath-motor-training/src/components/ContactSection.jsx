@@ -9,23 +9,28 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import { MdCall, MdEmail } from "react-icons/md";
+import Link from "next/link";
 const ContactSection = () => {
   const contact = [
     {
       icon: <FaWhatsapp size={20} />,
       text: "+91 82507 42988",
+      link: "https://wa.me/918250742988"
     },
     {
       icon: <MdCall size={20} />,
       text: "+91 82507 42988",
+      link : "tel:918250742988"
     },
     {
       icon: <MdEmail size={20} />,
       text: "ntmtssiliguri@gmail.com",
+      link : "mailto:ntmtssiliguri@gmail.com"
     },
     {
       icon: <FaLocationDot size={20} />,
       text: "Hatir More SBI ATM, Ward 17, Subhaspally, Hatirmore, Siliguri, WB - 734001",
+      link: "#"
     },
   ];
 
@@ -88,7 +93,7 @@ const ContactSection = () => {
                       className="flex gap-2 items-center  w-full"
                     >
                       <span className="text-defined-green">{item.icon}</span>
-                      <span>{item.text}</span>
+                     <Link href={item.link} target="_blank"><span>{item.text}</span></Link>
                     </div>
                   ))}
                 </div>

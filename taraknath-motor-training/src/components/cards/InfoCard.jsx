@@ -4,7 +4,7 @@ const InfoCard = ({ icon, title }) => {
   return (
     <div
       className="group aspect-auto flex flex-col gap-2 justify-center items-center border-2 border-dashed border-defined-green p-4 
-      bg-defined-green text-white md:bg-transparent md:text-inherit md:hover:bg-defined-green md:hover:text-white transition-all duration-500"
+      bg-defined-green text-white md:bg-transparent md:text-inherit md:hover:bg-defined-green md:hover:text-white transition-all duration-500 h-[10rem]"
     >
       <Image
         src={icon}

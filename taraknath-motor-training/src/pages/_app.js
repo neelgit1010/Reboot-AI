@@ -1,10 +1,15 @@
 import "@/styles/globals.css";
-import { ScrollProvider } from "../store/ScrollContext";
-
+import { Outfit } from "next/font/google";
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 export default function App({ Component, pageProps }) {
   return (
-    <ScrollProvider>
-      <Component {...pageProps} />
-    </ScrollProvider>
+    <>
+      <style jsx global>{`
+        html {
+          font-family: ${outfit.style.fontFamily};
+        }
+      `}</style>
+        <Component {...pageProps} />
+    </>
   );
 }

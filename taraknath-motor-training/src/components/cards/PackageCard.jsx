@@ -64,7 +64,7 @@ const PackageCard = ({ item }) => {
         ))}
       </div>
       <button
-        className={` text-white py-2 px-4 rounded-lg w-full ${
+        className={` text-white py-2 px-4 rounded-lg w-full hover:cursor-pointer ${
           isHovered
             ? "bg-defined-green transition-all duration-500"
             : "bg-defined-black"

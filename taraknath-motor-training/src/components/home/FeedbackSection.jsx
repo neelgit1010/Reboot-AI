@@ -6,9 +6,8 @@ import useElementHeight from "@/hooks/useElementHeight";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useScroll } from "@/store/ScrollContext";
 const FeedbackSection = () => {
-  const { aboutRef } = useScroll();
+
     const items = [
       {
         name: "Priya Ghosh",
@@ -102,7 +101,7 @@ const FeedbackSection = () => {
        };
      }, [router.query.scrollTo, router.events]);
   return (
-    <section id="feedback" ref={aboutRef}>
+    <section id="feedback">
       <div className="flex flex-col lg:flex-row gap-4 p-8">
         <div
           className="w-full lg:w-1/2"
