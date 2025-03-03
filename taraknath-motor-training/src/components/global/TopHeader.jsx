@@ -10,9 +10,11 @@ const TopHeader = () => {
         <div className="flex gap-4 w-full  sm:rounded-br-0 md:rounded-br-[4rem]  sm:px-4 md:px-6 sm:text-xs lg:text-sm xlg:text-base">
           <div className="flex md:gap-2 sm:gap-1 items-center sm:text-[10px] lg:text-sm xlg:text-base font-medium text-defined-black">
             <BiSolidPhoneCall size={20} />
-            <Link href="tel:+919563211411">+91 82507 42988</Link>
+            <Link href="tel:+919563500112">+91 95635 00112</Link>
             <FaWhatsapp size={20} />
-            <span>+91 82507 42988</span>{" "}
+            <Link href="https://wa.me/919563500112">
+              <span>+91 95635 00112</span>{" "}
+            </Link>
           </div>
         </div>
         <div className="flex gap-4 sm:px-4 md:px-6 sm:text-xs lg:text-sm xlg:text-base">

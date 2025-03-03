@@ -14,23 +14,23 @@ const ContactSection = () => {
   const contact = [
     {
       icon: <FaWhatsapp size={20} />,
-      text: "+91 82507 42988",
-      link: "https://wa.me/918250742988"
+      text: "+91 95635 00112",
+      link: "https://wa.me/919563500112",
     },
     {
       icon: <MdCall size={20} />,
-      text: "+91 82507 42988",
-      link : "tel:918250742988"
+      text: "+91 95635 00112",
+      link: "tel:919563500112",
     },
     {
       icon: <MdEmail size={20} />,
       text: "ntmtssiliguri@gmail.com",
-      link : "mailto:ntmtssiliguri@gmail.com"
+      link: "mailto:ntmtssiliguri@gmail.com",
     },
     {
       icon: <FaLocationDot size={20} />,
       text: "Hatir More SBI ATM, Ward 17, Subhaspally, Hatirmore, Siliguri, WB - 734001",
-      link: "#"
+      link: "#",
     },
   ];
 

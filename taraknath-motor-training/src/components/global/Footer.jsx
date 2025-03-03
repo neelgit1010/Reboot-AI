@@ -50,16 +50,16 @@ const Footer = () => {
               <div className=" text-defined-brown font-semibold">
                 <div className="flex items-center gap-2">
                   <FaWhatsapp className="text-defined-black" />
-                  <Link href="https://wa.me/918250742988">
+                  <Link href="https://wa.me/919563500112">
                     {" "}
-                    <span> +91 82507 42988</span>
+                    <span> +91 95635 00112</span>
                   </Link>
                 </div>
                 <div className="flex items-center gap-2">
                   <FaMobile className="text-defined-black" />
-                  <Link href="tel:918250742988">
+                  <Link href="tel:919563500112">
                     {" "}
-                    <span> +91 82507 42988</span>
+                    <span> +91 95635 00112</span>
                   </Link>
                 </div>
                 <div className="flex items-center gap-2">
@@ -193,10 +193,7 @@ const Footer = () => {
           <h1>
             Design & Developed By:{" "}
             <span className="font-semibold hover:text-defined-black">
-              <a
-                target="_blank"
-                href="https://rebootai.in/"
-              >
+              <a target="_blank" href="https://rebootai.in/">
                 Reboot AI Pvt. Ltd.
               </a>
             </span>
