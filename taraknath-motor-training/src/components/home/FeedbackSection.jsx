@@ -102,9 +102,9 @@ const FeedbackSection = () => {
      }, [router.query.scrollTo, router.events]);
   return (
     <section id="feedback">
-      <div className="flex flex-col lg:flex-row gap-4 p-8">
+      <div className="flex flex-col lg:flex-row gap-4 p-8 relative">
         <div
-          className="w-full lg:w-1/2"
+          className="w-full lg:w-[60%]"
           style={{
             height: isSmallScreen ? "auto" : `${rightSideHeight}px`,
           }}
@@ -119,7 +119,7 @@ const FeedbackSection = () => {
         </div>
 
         <div
-          className="w-full lg:w-1/2 mx:auto flex flex-col gap-4"
+          className="lg:absolute lg:top-0 lg:right-0 w-full lg:w-[60%] mx:auto flex flex-col gap-4"
           ref={leftSideRef}
         >
           <h1 className="text-2xl font-bold text-defined-black">
