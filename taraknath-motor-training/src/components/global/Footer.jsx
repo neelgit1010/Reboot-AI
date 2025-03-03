@@ -93,7 +93,7 @@ const Footer = () => {
                       key={index}
                       className="py-2 hover:underline hover:text-defined-black font-semibold"
                     >
-                      <Link href="/services">
+                      <Link href="/packages">
                         {">"}
                         {item}
                       </Link>
