@@ -4,6 +4,7 @@ import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import { MdCancel } from "react-icons/md";
+import EnquiryFormCard from "../cards/EnquiryFormCard";
 // import EnquiryCard from "../cards/EnquiryCard";
 
 const Header = () => {
@@ -92,7 +93,7 @@ const Header = () => {
 
             <button
               onClick={openModal}
-              className="bg-defined-orange text-white py-2 px-8 rounded-full w-full transition-all duration-300 font-semibold hover:bg-gray-800"
+              className="bg-defined-green text-white py-2 px-8 rounded-full w-full transition-all duration-300 font-semibold hover:bg-gray-800"
             >
               Enroll Today!
             </button>
@@ -102,21 +103,34 @@ const Header = () => {
 
       {modalOpen && (
         <div
-          className="fixed inset-0 z-[1300] flex items-center justify-center bg-black bg-opacity-50"
+          className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/60"
           onClick={closeModal}
         >
           <div
-            className="relative w-full max-w-lg bg-white rounded-lg p-6"
+            className="relative w-full max-w-lg z-[1400] rounded-lg p-6 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Background Image Positioned Behind the Form */}
+            <div className="absolute inset-0 w-full h-full z-[-1]">
+              <Image
+                src="/images/serviceandcontactus-background.jpg"
+                alt="serviceandcontactus-background"
+                layout="fill" // Makes it cover the entire div
+                objectFit="cover" // Ensures it covers without distortion
+                priority
+              />
+            </div>
+
             <button
               onClick={closeModal}
-              className="absolute top-1 right-4 text-defined-orange"
+              className="absolute top-1 right-4 text-defined-white"
             >
               <MdCancel size={30} />
             </button>
-            <div className="w-full p-4">
-              {/* <EnquiryCard /> */}
+
+            {/* Form Content */}
+            <div className="w-full p-4 bg-opacity-90 rounded-lg">
+              <EnquiryFormCard />
             </div>
           </div>
         </div>

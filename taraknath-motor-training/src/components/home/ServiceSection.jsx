@@ -45,19 +45,18 @@ const ServiceSection = () => {
           Safe. Professional. Reliable. Skilled.
         </p>
 
-        <div className="flex flex-col md:flex-row gap-4 p-4 relative">
+        <div className="flex flex-col md:flex-row gap-4 relative">
           <Image
             src="/images/serviceandcontactus-background.jpg"
             width={500}
             height={500}
             alt="service-img"
-            className="w-full h-auto object-cover"
+            className="w-full h-[70rem] md:h-[30rem] object-cover"
           />
 
-          <div className="absolute top-0 left-0 w-full h-full flex flex-col md:flex-row justify-center items-center text-defined-white p-24 gap-6">
+          <div className="absolute top-0 left-0 w-full h-full flex flex-col md:flex-row justify-center items-center text-defined-white p-10 gap-6">
             <div className="flex flex-col gap-2 w-full md:w-[60%]">
-              <div className="flex gap-2 flex-col items-start">
-                <div className="flex gap-2 items-center justify-center">
+                <div className="flex gap-2 items-center  w-full">
                   <Image
                     src="/package/star-g.svg"
                     width={200}
@@ -65,12 +64,12 @@ const ServiceSection = () => {
                     alt="package-img"
                     className="w-auto h-[1.2rem] object-cover "
                   />
-                  <h1 className="text-2xl font-bold ">
+                  <h1 className="text-2xl font-bold text-start">
                     Driving License 24 Wheelers
                   </h1>
                 </div>
                 {items.map((item, index) => (
-                  <div key={index} className="flex gap-2 items-center">
+                  <div key={index} className="flex gap-2 md:items-center w-full">
                     <Image
                       src="/global/done-r.svg"
                       alt="done"
@@ -81,7 +80,6 @@ const ServiceSection = () => {
                     <p>{item.title}</p>
                   </div>
                 ))}
-              </div>
             </div>
             <div className="flex flex-col gap-2 w-full md:w-[40%]">
                 <EnquiryFormCard />

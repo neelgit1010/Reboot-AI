@@ -1,7 +1,37 @@
+import { useState } from "react";
+
 const EnquiryFormCard = () => {
 
+  const [form, setForm] = useState({});
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        if (!form.name || !form.mobile || !form.package || !form.message) {
+          alert("Please fill all the fields");
+          return;
+        }
+
+        if (form.mobile.length !== 10) {
+          alert("Please enter a valid mobile number");
+          return;
+        }
+
+        const dest = "+918250742988";
+        let message = `*Name:* ${form.name}
+  *Phone:* ${form.mobile}
+  *Package needed:* ${form.package}
+  *Message:* ${form.message}
+  `;
+        message = encodeURIComponent(message);
+        // Check if user is on mobile
+        const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+        const baseUrl = isMobile
+          ? "https://api.whatsapp.com/send"
+          : "https://web.whatsapp.com/send";
+
+        const url = `${baseUrl}?phone=${dest}&text=${message}`;
+        window.open(url, "_blank").focus();
+      
     }
 
   return (
@@ -17,17 +47,22 @@ const EnquiryFormCard = () => {
         <input
           type="text"
           placeholder="Name"
+          name="name"
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
           className="bg-defined-white text-defined-black w-full rounded-md p-3 opacity-50 outline-none
           "
         />
         <input
           type="number"
           placeholder="Mobile Number"
+          name="mobile"
+          onChange={(e) => setForm({ ...form, mobile: e.target.value })}
           className="bg-defined-white text-defined-black w-full rounded-md p-3 opacity-50 outline-none
           "
         />
         <select
           name="package"
+          onChange={(e) => setForm({ ...form, package: e.target.value })}
           className="bg-defined-white text-defined-black w-full rounded-md p-3 opacity-50 outline-none"
           id=""
         >
@@ -43,10 +78,12 @@ const EnquiryFormCard = () => {
         <input
           type="text"
           placeholder="Message"
+          name="message"
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
           className="bg-defined-white text-defined-black w-full rounded-md p-3 opacity-50 outline-none
           "
         />
-        <button className="bg-defined-green text-defined-white w-full rounded-md p-3">Enroll Today!</button>
+        <button type="submit" className="bg-defined-green text-defined-white w-full rounded-md p-3">Enroll Today!</button>
       </form>
     </div>
   );

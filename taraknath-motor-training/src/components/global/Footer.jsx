@@ -1,45 +1,34 @@
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
-import { FaFacebook, FaGoogle, FaMobile, FaWhatsapp, FaYoutube } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import React, { useRef, useState } from "react";
+import { FaMobile, FaWhatsapp } from "react-icons/fa";
+import { MdCancel, MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
-import { AiFillInstagram } from "react-icons/ai";
 import Link from "next/link";
+import EnquiryFormCard from "../cards/EnquiryFormCard";
+import { useScroll } from "@/store/ScrollContext";
 
 const Footer = () => {
+  const { aboutRef } = useScroll();
+  const scrollToSection = () => {
+    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const quickas = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Our Packages", path: "/services" },
-    { name: "Testimonial", path: "/services" },
-    { name: " Motor Training School", path: "/services" },
-    { name: "Vehicle Institute", path: "/services" },
+    { name: "Our Packages", path: "/packages" },
+    { name: "Testimonial", path: "/?scrollTo=feedback" },
+    { name: " Motor Training School", path: "/packages" },
+    { name: "Vehicle Institute", path: "/packages" },
     { name: "Contact Us", path: "/contact" },
-    { name: "Gallery", path: "/services" },
+    { name: "Gallery", path: "/packages" },
   ];
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleBookingModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
 
-  const modalRef = useRef(null);
+   const [modalOpen, setModalOpen] = useState(false);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setIsModalOpen(false);
-      }
-    };
-
-    if (isModalOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isModalOpen]);
+     const openModal = () => setModalOpen(true);
+     const closeModal = () => setModalOpen(false);
   return (
     <footer className="relative w-full p-6 lg:p-8 border-t-4 bg-defined-white text-defined-brown">
       {/* Content */}
@@ -143,10 +132,47 @@ const Footer = () => {
                 referrerpolicy="no-referrer-when-downgrade"
                 className="w-full h-[16rem]"
               ></iframe>
-              <button className="bg-defined-green text-white font-bold px-4 py-2 rounded w-full">
+              <button
+                onClick={openModal}
+                className="bg-defined-green text-white font-bold px-4 py-2 rounded w-full"
+              >
                 Pay Now
               </button>
             </div>
+            {modalOpen && (
+              <div
+                className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/60"
+                onClick={closeModal}
+              >
+                <div
+                  className="relative w-full max-w-lg z-[1400] rounded-lg p-6 overflow-hidden"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Background Image Positioned Behind the Form */}
+                  <div className="absolute inset-0 w-full h-full z-[-1]">
+                    <Image
+                      src="/images/serviceandcontactus-background.jpg"
+                      alt="serviceandcontactus-background"
+                      layout="fill" // Makes it cover the entire div
+                      objectFit="cover" // Ensures it covers without distortion
+                      priority
+                    />
+                  </div>
+
+                  <button
+                    onClick={closeModal}
+                    className="absolute top-1 right-4 text-defined-white"
+                  >
+                    <MdCancel size={30} />
+                  </button>
+
+                  {/* Form Content */}
+                  <div className="w-full p-4 bg-opacity-90 rounded-lg">
+                    <EnquiryFormCard />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

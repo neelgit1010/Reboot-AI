@@ -4,6 +4,7 @@ import InfoSection from "../components/home/InfoSection"
 import AboutSection from "../components/home/AboutSection";
 import PackageSection from "../components/home/PackageSection";
 import ServiceSection from "@/components/home/ServiceSection";
+import FeedbackSection from "@/components/home/FeedbackSection";
 export default function Home() {
   return (
     <MainTemplate>
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutSection />
       <PackageSection />
       <ServiceSection />
+      <FeedbackSection />
     </MainTemplate>
   );
 }
