@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  
+  --font-display: "Outfit";
+
+  --color-defined-blue : #000F5B;
+  --color-defined-orange : #FF3C00;
+  --color-defined-brown : #666666;
+
+  --breakpoint-xxl: 1780px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-xlg: 1280px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-md: 760px;
+  --breakpoint-sm: 280px;
+
+} 

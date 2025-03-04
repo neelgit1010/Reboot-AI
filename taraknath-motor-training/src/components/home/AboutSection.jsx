@@ -66,7 +66,7 @@ const AboutSection = () => {
               <h1 className="text-xl md:text-5xl font-semibold">
                 {inView ? <CountUp end={20} duration={3} /> : 0}+
               </h1>
-              <p className="text-xl">Years of Experience</p>
+              <p className="text-base md:text-xl">Years of Experience</p>
             </div>
           </div>
         </div>
