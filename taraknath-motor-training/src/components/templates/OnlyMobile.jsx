@@ -51,7 +51,7 @@ const OnlyMobile = () => {
       >
         <Link
           target="_Blank"
-          href="https://wa.me/918250742988"
+          href="https://wa.me/919563500112"
           className="flex flex-col items-center gap-2 text-sm text-site-typo-secondary font-semibold"
         >
           <span className="text-xl">
@@ -77,7 +77,7 @@ const OnlyMobile = () => {
           <span className="relative top-8">Enroll Today!</span>
         </button>
         <Link
-          href="tel:+9182507429881"
+          href="tel:+919563500112"
           target="_Blank"
           className="flex flex-col gap-2 items-center text-sm text-site-typo-secondary font-semibold"
         >

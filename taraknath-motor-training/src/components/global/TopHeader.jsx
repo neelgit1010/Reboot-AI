@@ -21,8 +21,8 @@ const TopHeader = () => {
           <div className="flex gap-2 w-full text-defined-black">
             <IoLocationSharp size={20} />
             <span className="font-medium text-sm text-nowrap">
-              Hatir More SBI ATM, Ward 17, Subhaspally, Hatirmore, Siliguri, WB
-              - 734001
+              Ashtosh Mukherjee Road, College Para, Near HDFC Bank ATM, Opposite
+              Digitalwoods, Siliguri WB 712103
             </span>
           </div>
         </div>

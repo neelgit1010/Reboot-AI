@@ -29,7 +29,7 @@ const ContactSection = () => {
     },
     {
       icon: <FaLocationDot size={20} />,
-      text: "Hatir More SBI ATM, Ward 17, Subhaspally, Hatirmore, Siliguri, WB - 734001",
+      text: "Ashtosh Mukherjee Road, College Para, Near HDFC Bank ATM, Opposite Digitalwoods, Siliguri WB 712103",
       link: "#",
     },
   ];
@@ -93,7 +93,9 @@ const ContactSection = () => {
                       className="flex gap-2 items-center  w-full"
                     >
                       <span className="text-defined-green">{item.icon}</span>
-                     <Link href={item.link} target="_blank"><span>{item.text}</span></Link>
+                      <Link href={item.link} target="_blank">
+                        <span>{item.text}</span>
+                      </Link>
                     </div>
                   ))}
                 </div>
@@ -117,20 +119,19 @@ const ContactSection = () => {
               <EnquiryFormCard />
             </div>
           </div>
-
         </div>
-          <div className="w-full h-full">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.461208015161!2d88.41107397490107!3d26.725586116762177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e4411a8f608017%3A0x6152da09ef547352!2sTaraknath%20Motor%20Traning%20School!5e1!3m2!1sen!2sin!4v1740978028098!5m2!1sen!2sin"
-              width="600"
-              height="450"
-              style={{"border":"0"}}
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-            ></iframe>
-          </div>
+        <div className="w-full h-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6357.807025454877!2d88.4234679905895!3d26.70974664112309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAshtosh%20Mukherjee%20Road%2C%20College%20Para%2C%20Near%20HDFC%20Bank%20ATM%2C%20Opposite%20Digitalwoods%2C%20Siliguri%20WB%20712103!5e1!3m2!1sen!2sin!4v1741064593065!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style={{ border: "0" }}
+            allowFullscreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full"
+          ></iframe>
+        </div>
       </div>
     </section>
   );

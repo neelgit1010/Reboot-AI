@@ -72,8 +72,8 @@ const Footer = () => {
                 <div className="flex gap-2 w-full xl:w-[80%]">
                   <IoLocationSharp size={20} className="text-defined-black" />
                   <span className="w-[80%]">
-                    NH-31, Bypass Road, Beside City Hospital, Prakash Nagar,
-                    Near Gandhi Maidan, Ward No. 43, Siliguri, WB - 734003
+                    Ashtosh Mukherjee Road, College Para, Near HDFC Bank ATM,
+                    Opposite Digitalwoods, Siliguri WB 712103
                   </span>
                 </div>
               </div>
@@ -127,14 +127,14 @@ const Footer = () => {
             {/* Right Section */}
             <div className="w-full lg:w-[30%] flex flex-col gap-4">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.9062198542492!2d88.43126057482058!3d26.7096496687889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e44130ae00188d%3A0xaf550ab84ff3a30d!2sNew%20Taraknath%20Motor%20training%20school!5e1!3m2!1sen!2sin!4v1740819003671!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6357.807025454877!2d88.4234679905895!3d26.70974664112309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAshtosh%20Mukherjee%20Road%2C%20College%20Para%2C%20Near%20HDFC%20Bank%20ATM%2C%20Opposite%20Digitalwoods%2C%20Siliguri%20WB%20712103!5e1!3m2!1sen!2sin!4v1741064593065!5m2!1sen!2sin"
                 width="600"
                 height="450"
-                style={{ border: "0" }}
-                allowfullscreen=""
+                style={{border:"0"}}
+                allowFullscreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                className="w-full h-[16rem]"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-[15rem]"
               ></iframe>
               <button
                 onClick={openModal}
