@@ -4,8 +4,7 @@ import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import { MdCancel } from "react-icons/md";
-// import EnquiryFormCard from "../cards/EnquiryFormCard";
-// import EnquiryCard from "../cards/EnquiryCard";
+import EnquiryCard from "../cards/EnquiryCard";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +13,8 @@ const Header = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Our Packages", path: "/packages" },
+    { name: "Our Services", path: "/services" },
+    { name: "Gallery", path: "/gallery" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -43,7 +43,7 @@ const Header = () => {
             <Link
               key={index}
               href={item.path}
-              className="hover:text-defined-green text-defined-blue transition-all duration-500"
+              className="hover:text-defined-orange text-defined-blue transition-all duration-500"
             >
               {item.name}
             </Link>
@@ -54,9 +54,9 @@ const Header = () => {
         <div className="hidden lg:flex lg:gap-5">
           <button
             onClick={openModal}
-            className="bg-defined-black hover:bg-defined-green hover:cursor-pointer text-white py-2 px-8 rounded-md transition-all duration-700 font-semibold"
+            className="hover:cursor-pointer text-white py-2 px-8 rounded-md font-semibold bg-gradient-to-r from-defined-blue to-defined-orange bg-[length:200%_100%] bg-left transition-all duration-700 hover:bg-right"
           >
-            Enroll Today!
+            Enquire Now
           </button>
         </div>
 
@@ -86,7 +86,7 @@ const Header = () => {
               onClick={openModal}
               className="bg-defined-green text-white py-2 px-8 rounded-full w-full transition-all duration-300 font-semibold hover:bg-gray-800"
             >
-              Enroll Today!
+              Enquire Now
             </button>
           </div>
         )}
@@ -94,7 +94,7 @@ const Header = () => {
 
       {modalOpen && (
         <div
-          className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/60"
+          className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/70" // Increased opacity here
           onClick={closeModal}
         >
           <div
@@ -104,24 +104,24 @@ const Header = () => {
             {/* Background Image Positioned Behind the Form */}
             <div className="absolute inset-0 w-full h-full z-[-1]">
               <Image
-                src="/images/serviceandcontactus-background.jpg"
-                alt="serviceandcontactus-background"
+                src="/gallery/gallery2.jpg"
+                alt="gallery2img"
                 layout="fill" // Makes it cover the entire div
                 objectFit="cover" // Ensures it covers without distortion
                 priority
+                className="object-cover"
               />
             </div>
 
-            <button
-              onClick={closeModal}
-              className="absolute top-1 right-4 text-defined-white"
-            >
+            <button onClick={closeModal} className="absolute top-1 right-4">
               <MdCancel size={30} />
             </button>
 
-            {/* Form Content */}
-            <div className="w-full p-4 bg-opacity-90 rounded-lg">
-              {/* <EnquiryFormCard /> */}
+            {/* Form Content with Darker Background */}
+            <div className="w-full p-4 bg-black/60 rounded-lg">
+              {" "}
+              {/* Adjusted opacity */}
+              <EnquiryCard />
             </div>
           </div>
         </div>

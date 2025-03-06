@@ -11,12 +11,11 @@ const Footer = () => {
   const quickas = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Our Packages", path: "/packages" },
-    { name: "Testimonial", path: "/?scrollTo=feedback" },
-    { name: " Motor Training School", path: "/packages" },
-    { name: "Vehicle Institute", path: "/packages" },
+    { name: "Our Services", path: "/services" },
+    { name: "Gallery", path: "/gallery" },
     { name: "Contact Us", path: "/contact" },
-    { name: "Gallery", path: "/packages" },
+    { name: "Facebook", path: "/packages" },
+    { name: "Instagram", path: "/contact" },
   ];
 
 
@@ -25,7 +24,7 @@ const Footer = () => {
      const openModal = () => setModalOpen(true);
      const closeModal = () => setModalOpen(false);
   return (
-    <footer className="relative w-full p-6 lg:p-8 border-t-4 bg-defined-white text-defined-brown">
+    <footer className="relative w-full p-6 lg:p-8 border-t-4 text-defined-orange">
       {/* Content */}
       <div className="relative z-10">
         <div className="flex flex-col gap-6">
@@ -40,80 +39,52 @@ const Footer = () => {
                 className="w-[20rem] h-auto object-cover"
               />
               <p className="text-sm font-semibold lg:w-[80%] w-full">
-                Drive with confidence! Join New Taraknath Motor Training School
-                Siliguri’s most trusted driving institute for expert training,
-                safety, and success on the road.
+                Experience quality, durability, and style with Window Solution!
+                Contact us today for premium UPVC windows, doors, and more.
               </p>
-              <h1 className="font-bold text-xl text-defined-black">
-                Contact Information
-              </h1>
+
               <div className=" text-defined-brown font-semibold">
                 <div className="flex items-center gap-2">
-                  <FaWhatsapp className="text-defined-black" />
-                  <Link href="https://wa.me/919563500112">
+                  <FaWhatsapp className="text-defined-orange" />
+                  <Link href="https://wa.me/919749888898">
                     {" "}
-                    <span> +91 95635 00112</span>
+                    <span> +91 97498 88898</span>
                   </Link>
                 </div>
                 <div className="flex items-center gap-2">
-                  <FaMobile className="text-defined-black" />
-                  <Link href="tel:919563500112">
+                  <FaMobile className="text-defined-orange" />
+                  <Link href="tel:919749888898">
                     {" "}
-                    <span> +91 95635 00112</span>
+                    <span> +91 97498 88898</span>
                   </Link>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MdEmail className="text-defined-black" />
-                  <Link href="mailto:ntmtssiliguri@gmail.com">
+                  <MdEmail className="text-defined-orange" />
+                  <Link href="mailto:windowsolution@gmail.com">
                     {" "}
-                    <span>ntmtssiliguri@gmail.com</span>
+                    <span>windowsolution@gmail.com</span>
                   </Link>
                 </div>
                 <div className="flex gap-2 w-full xl:w-[80%]">
-                  <IoLocationSharp size={20} className="text-defined-black" />
+                  <IoLocationSharp size={20} className="text-defined-orange" />
+                  <a href="https://maps.app.goo.gl/LVYm15mj2FheZrGEA" target="_blank">
                   <span className="w-[80%]">
-                    Ashtosh Mukherjee Road, College Para, Near HDFC Bank ATM,
-                    Opposite Digitalwoods, Siliguri WB 712103
+                    Milestone Building Checkpost, Near Bhaktinagar Thana,
+                    Siliguri 734002
                   </span>
+                  </a>
                 </div>
               </div>
             </div>
             <div className="flex flex-col gap-4 w-full lg:w-[35%] lg:flex-row">
-              {/* Our Services*/}
-              <div className="w-full md:w-[60%]">
-                <h1 className="font-bold text-defined-black">Our Services</h1>
-                <ul className="text-defined-brown text-sm">
-                  {[
-                    "Best Motor Training In Siliguri",
-                    "Motor Training In Siliguri",
-                    "Motor Training In Siliguri",
-                    "Two Wheeler Training",
-                    "Four Wheeler Training",
-                    "Two Wheeler Training",
-                    "Two Wheeler Training",
-                    "Two Wheeler Training",
-                  ].map((item, index) => (
-                    <li
-                      key={index}
-                      className="py-2 hover:text-defined-black font-semibold"
-                    >
-                      <Link href="/packages">
-                        {"> "}
-                        {item}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               {/* Quick as */}
               <div className="w-1/2">
-                <h1 className="font-bold text-defined-black">Quick Links</h1>
+                <h1 className="font-bold text-defined-blue">Quick Links</h1>
                 <ul className="text-defined-brown text-sm">
                   {quickas.map((item, index) => (
                     <li
                       key={index}
-                      className="py-2 hover:text-defined-black font-semibold"
+                      className="py-2 hover:text-defined-orange font-semibold"
                     >
                       <Link href={item.path}>
                         {">  "}
@@ -123,14 +94,40 @@ const Footer = () => {
                   ))}
                 </ul>
               </div>
+
+              {/* Our Services*/}
+              <div className="w-full md:w-[60%]">
+                <h1 className="font-bold text-defined-blue">Our Services</h1>
+                <ul className="text-defined-brown text-sm">
+                  {[
+                    "UPVC Window",
+                    "UPVC Door",
+                    "Interior Design",
+                    "SS Steel Railing",
+                    "False Ceilling",
+                    "False Ceilling",
+                    "UPVC Window In Siliguri",
+                  ].map((item, index) => (
+                    <li
+                      key={index}
+                      className="py-2 hover:text-defined-orange font-semibold"
+                    >
+                      <Link href="/services">
+                        {"> "}
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             {/* Right Section */}
             <div className="w-full lg:w-[30%] flex flex-col gap-4">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6357.807025454877!2d88.4234679905895!3d26.70974664112309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAshtosh%20Mukherjee%20Road%2C%20College%20Para%2C%20Near%20HDFC%20Bank%20ATM%2C%20Opposite%20Digitalwoods%2C%20Siliguri%20WB%20712103!5e1!3m2!1sen!2sin!4v1741064593065!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3177.8192331463188!2d88.43453277482195!3d26.748560567126788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441f13deaa191%3A0x839ee462a747d20e!2sWindow%20Solution%20%7C%20Best%20UPVC%20Windows%20in%20Siliguri!5e1!3m2!1sen!2sin!4v1741075812247!5m2!1sen!2sin"
                 width="600"
                 height="450"
-                style={{border:"0"}}
+                style={{ border: "0" }}
                 allowFullscreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -138,14 +135,14 @@ const Footer = () => {
               ></iframe>
               <button
                 onClick={openModal}
-                className="bg-defined-green hover:cursor-pointer text-white font-bold px-4 py-2 rounded w-full"
+                className="hover:cursor-pointer text-white py-2 px-8 rounded-md font-semibold bg-gradient-to-r from-defined-blue to-defined-orange bg-[length:200%_100%] bg-left transition-all duration-700 hover:bg-right"
               >
                 Pay Now
               </button>
             </div>
             {modalOpen && (
               <div
-                className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/60"
+                className="fixed inset-0 z-[1300] flex items-center justify-center bg-orange/60"
                 onClick={closeModal}
               >
                 <div
@@ -185,14 +182,14 @@ const Footer = () => {
         <div className="text-sm text-defined-brown flex flex-col md:flex-row justify-between items-center">
           <h1>
             © 2025{" "}
-            <span className="font-bold hover:text-defined-black">
-              <Link href="/">New Taraknath Moror Training School</Link>
+            <span className="font-bold text-defined-blue hover:text-defined-orange">
+              <Link href="/">Window Solution</Link>
             </span>{" "}
             - All Rights Reserved
           </h1>
           <h1>
             Design & Developed By:{" "}
-            <span className="font-semibold hover:text-defined-black">
+            <span className="font-semibold text-defined-blue hover:text-defined-orange">
               <a target="_blank" href="https://rebootai.in/">
                 Reboot AI Pvt. Ltd.
               </a>
