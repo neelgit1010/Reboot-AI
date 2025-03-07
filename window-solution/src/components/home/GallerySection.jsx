@@ -50,7 +50,7 @@ const GallerySection = () => {
             1024: { slidesPerView: 3, spaceBetween: 40 }, 
           }}
           coverflowEffect={{
-            rotate: 20,
+            rotate: 50,
             stretch: 0,
             depth: 100,
             modifier: 1,

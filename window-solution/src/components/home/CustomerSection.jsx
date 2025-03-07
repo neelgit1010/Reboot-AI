@@ -65,11 +65,10 @@ const CustomerSection = () => {
         <div key={reviews.length} className="w-full mx-auto p-8 h-auto">
           <Slider {...settings}>
             {reviews.map((review, index) => (
-              <CustomerCard
-                key={index}
-                review={review.desc}
-                name={review.name}
-              />
+              <div key={index} className="px-3">
+                {" "}
+                <CustomerCard review={review.desc} name={review.name} />
+              </div>
             ))}
           </Slider>
         </div>

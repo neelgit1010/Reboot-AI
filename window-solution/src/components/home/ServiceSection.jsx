@@ -1,6 +1,13 @@
+import { useState } from "react";
 import ServiceCard from "../cards/ServiceCard";
+import EnquiryCard from "../cards/EnquiryCard";
+import { MdCancel } from "react-icons/md";
+import Image from "next/image";
 
 const ServiceSection = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
     const services = [
       {
@@ -37,16 +44,51 @@ const ServiceSection = () => {
           Our Services
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-stretch">
           {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              desc={service.desc}
-            />
+            <div className="w-full h-full flex flex-col justify-between items-center hover:cursor-pointer" onClick={openModal}>
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                title={service.title}
+                desc={service.desc}
+              />
+            </div>
           ))}
         </div>
+
+        {modalOpen && (
+          <div
+            className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/70"
+            onClick={closeModal}
+          >
+            <div
+              className="relative w-full max-w-lg z-[1400] rounded-lg p-6 bg-black/80" // Added bg-black/80
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Background Image Positioned Behind the Form */}
+              <div className="absolute inset-0 w-auto h-auto z-[-1]">
+                <Image
+                  src="/gallery/gallery8.jpg"
+                  alt="gallery2img"
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                  className="object-cover"
+                />
+              </div>
+
+              <button onClick={closeModal} className="absolute top-1 right-4">
+                <MdCancel
+                  size={30}
+                  className="text-defined-orange hover:cursor-pointer"
+                />
+              </button>
+
+              <EnquiryCard />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

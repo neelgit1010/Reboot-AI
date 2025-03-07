@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 const ServiceCard = ({icon, title, desc}) => {
+    
   return (
     <div className="w-full h-auto flex flex-col justify-between flex-grow">
       <div>
@@ -12,7 +13,7 @@ const ServiceCard = ({icon, title, desc}) => {
           className="w-full h-auto object-cover"
         ></Image>
       </div>
-      <div className="flex flex-col gap-2 p-6 bg-gradient-to-r from-defined-orange to-defined-orange bg-[length:200%_100%] bg-left hover:bg-gradient-to-r hover:from-defined-orange hover:to-defined-blue transition-all duration-700 hover:bg-[50%] w-full h-full">
+      <div className="flex flex-col gap-2 p-6 bg-gradient-to-r from-defined-orange to-defined-orange bg-[length:200%_100%] bg-left hover:bg-gradient-to-r hover:from-defined-orange hover:to-defined-blue transition-all duration-700 hover:bg-[50%] w-full h-full text-white">
         <h1 className="text-2xl font-bold">{title}</h1>
         <p>
          {desc}
