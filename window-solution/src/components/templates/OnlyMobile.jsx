@@ -4,8 +4,8 @@ import { MdCancel } from "react-icons/md";
 import { TbBrandWhatsappFilled } from "react-icons/tb";
 import { HiOutlineCurrencyRupee } from "react-icons/hi";
 import { FaPhone } from "react-icons/fa6";
-// import EnquiryFormCard from "../cards/EnquiryFormCard";
 import Image from "next/image";
+import EnquiryCard from "../cards/EnquiryCard";
 
 const OnlyMobile = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,7 +51,7 @@ const OnlyMobile = () => {
       >
         <Link
           target="_Blank"
-          href="https://wa.me/919563500112"
+          href="https://wa.me/919749888898"
           className="flex flex-col items-center gap-2 text-sm text-site-typo-secondary font-semibold"
         >
           <span className="text-xl">
@@ -77,7 +77,7 @@ const OnlyMobile = () => {
           <span className="relative top-8">Enroll Today!</span>
         </button>
         <Link
-          href="tel:+919563500112"
+          href="tel:+919749888898"
           target="_Blank"
           className="flex flex-col gap-2 items-center text-sm text-site-typo-secondary font-semibold"
         >
@@ -92,35 +92,33 @@ const OnlyMobile = () => {
       </div>
       {modalOpen && (
         <div
-          className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/60"
+          className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/70"
           onClick={closeModal}
         >
           <div
-            className="relative w-full max-w-lg z-[1400] rounded-lg p-6 overflow-hidden"
+            className="relative w-full max-w-lg z-[1400] rounded-lg p-6 bg-black/80" // Added bg-black/80
             onClick={(e) => e.stopPropagation()}
           >
             {/* Background Image Positioned Behind the Form */}
-            <div className="absolute inset-0 w-full h-full z-[-1]">
+            <div className="absolute inset-0 w-auto h-auto z-[-1]">
               <Image
-                src="/images/serviceandcontactus-background.jpg"
-                alt="serviceandcontactus-background"
-                layout="fill" // Makes it cover the entire div
-                objectFit="cover" // Ensures it covers without distortion
+                src="/gallery/gallery8.jpg"
+                alt="gallery2img"
+                layout="fill"
+                objectFit="cover"
                 priority
+                className="object-cover"
               />
             </div>
 
-            <button
-              onClick={closeModal}
-              className="absolute top-1 right-4 text-defined-white"
-            >
-              <MdCancel size={30} />
+            <button onClick={closeModal} className="absolute top-1 right-4">
+              <MdCancel
+                size={30}
+                className="text-defined-orange hover:cursor-pointer"
+              />
             </button>
 
-            {/* Form Content */}
-            <div className="w-full p-4 bg-opacity-90 rounded-lg">
-              {/* <EnquiryFormCard /> */}
-            </div>
+            <EnquiryCard />
           </div>
         </div>
       )}

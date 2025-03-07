@@ -4,10 +4,11 @@ import { FaMobile, FaWhatsapp } from "react-icons/fa";
 import { MdCancel, MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
 import Link from "next/link";
-// import EnquiryFormCard from "../cards/EnquiryFormCard";
+import EnquiryCard from "../cards/EnquiryCard";
 
 const Footer = () => {
 
+  
   const quickas = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
@@ -141,39 +142,34 @@ const Footer = () => {
               </button>
             </div>
             {modalOpen && (
-              <div
-                className="fixed inset-0 z-[1300] flex items-center justify-center bg-orange/60"
-                onClick={closeModal}
-              >
-                <div
-                  className="relative w-full max-w-lg z-[1400] rounded-lg p-6 overflow-hidden"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {/* Background Image Positioned Behind the Form */}
-                  <div className="absolute inset-0 w-full h-full z-[-1]">
-                    <Image
-                      src="/images/serviceandcontactus-background.jpg"
-                      alt="serviceandcontactus-background"
-                      layout="fill" // Makes it cover the entire div
-                      objectFit="cover" // Ensures it covers without distortion
-                      priority
-                    />
-                  </div>
-
-                  <button
-                    onClick={closeModal}
-                    className="absolute top-1 right-4 text-defined-white"
-                  >
-                    <MdCancel size={30} />
-                  </button>
-
-                  {/* Form Content */}
-                  <div className="w-full p-4 bg-opacity-90 rounded-lg">
-                    {/* <EnquiryFormCard /> */}
-                  </div>
-                </div>
-              </div>
-            )}
+                   <div
+                     className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/70"
+                     onClick={closeModal}
+                   >
+                     <div
+                       className="relative w-full max-w-lg z-[1400] rounded-lg p-6 bg-black/80" // Added bg-black/80
+                       onClick={(e) => e.stopPropagation()}
+                     >
+                       {/* Background Image Positioned Behind the Form */}
+                       <div className="absolute inset-0 w-auto h-auto z-[-1]">
+                         <Image
+                           src="/gallery/gallery8.jpg"
+                           alt="gallery2img"
+                           layout="fill"
+                           objectFit="cover"
+                           priority
+                           className="object-cover"
+                         />
+                       </div>
+           
+                       <button onClick={closeModal} className="absolute top-1 right-4">
+                         <MdCancel size={30} className="text-defined-orange hover:cursor-pointer" />
+                       </button>
+           
+                         <EnquiryCard />
+                     </div>
+                   </div>
+                 )}
           </div>
         </div>
 

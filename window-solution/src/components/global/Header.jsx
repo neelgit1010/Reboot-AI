@@ -84,7 +84,7 @@ const Header = () => {
 
             <button
               onClick={openModal}
-              className="bg-defined-green text-white py-2 px-8 rounded-full w-full transition-all duration-300 font-semibold hover:bg-gray-800"
+              className="hover:cursor-pointer text-white py-2 px-8 rounded-md font-semibold bg-gradient-to-r from-defined-blue to-defined-orange bg-[length:200%_100%] bg-left transition-all duration-700 hover:bg-right"
             >
               Enquire Now
             </button>
@@ -94,35 +94,33 @@ const Header = () => {
 
       {modalOpen && (
         <div
-          className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/70" // Increased opacity here
+          className="fixed inset-0 z-[1300] flex items-center justify-center bg-black/70"
           onClick={closeModal}
         >
           <div
-            className="relative w-full max-w-lg z-[1400] rounded-lg p-6 overflow-hidden"
+            className="relative w-full max-w-lg z-[1400] rounded-lg p-6 bg-black/80" // Added bg-black/80
             onClick={(e) => e.stopPropagation()}
           >
             {/* Background Image Positioned Behind the Form */}
-            <div className="absolute inset-0 w-full h-full z-[-1]">
+            <div className="absolute inset-0 w-auto h-auto z-[-1]">
               <Image
-                src="/gallery/gallery2.jpg"
+                src="/gallery/gallery8.jpg"
                 alt="gallery2img"
-                layout="fill" // Makes it cover the entire div
-                objectFit="cover" // Ensures it covers without distortion
+                layout="fill"
+                objectFit="cover"
                 priority
                 className="object-cover"
               />
             </div>
 
             <button onClick={closeModal} className="absolute top-1 right-4">
-              <MdCancel size={30} />
+              <MdCancel
+                size={30}
+                className="text-defined-orange hover:cursor-pointer"
+              />
             </button>
 
-            {/* Form Content with Darker Background */}
-            <div className="w-full p-4 bg-black/60 rounded-lg">
-              {" "}
-              {/* Adjusted opacity */}
-              <EnquiryCard />
-            </div>
+            <EnquiryCard />
           </div>
         </div>
       )}

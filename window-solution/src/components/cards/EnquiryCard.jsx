@@ -1,29 +1,59 @@
-import Image from "next/image";
+import { useState } from "react";
 
 const EnquiryCard = () => {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }
+    const [form, setForm] = useState({});
+         const handleSubmit = (e) => {
+           e.preventDefault();
+    
+           if (!form.name || !form.mobile || !form.service || !form.message) {
+             alert("Please fill all the fields");
+             return;
+           }
+    
+           if (form.mobile.length !== 10) {
+             alert("Please enter a valid mobile number");
+             return;
+           }
+    
+           const dest = "+919749888898";
+           let message = `*Name:* ${form.name}
+    *Phone:* ${form.mobile}
+    *Service needed:* ${form.service}
+    *Message:* ${form.message}
+      `;
+           message = encodeURIComponent(message);
+           // Check if user is on mobile
+           const isMobile = /iPhone|Android|iPad|iPod/i.test(navigator.userAgent);
+           const baseUrl = isMobile
+             ? "https://api.whatsapp.com/send"
+             : "https://web.whatsapp.com/send";
+    
+           const url = `${baseUrl}?phone=${dest}&text=${message}`;
+           window.open(url, "_blank").focus();
+         };
   return (
-    <div className="w-auto h-auto">
+    <div className="w-full h-full p-6">
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 text-black">
             <input
               type="text"
               placeholder="Name"
               name="name"
-              className="w-full p-3 border border-gray-200 rounded-md"
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              className="w-full p-3 border border-black rounded-md"
             />
             <input
-              type="mobile"
+              type="number"
               placeholder="Mobile Number"
               name="mobile"
-              className="w-full p-3 border border-gray-200 rounded-md"
+              onChange={(e) => setForm({ ...form, mobile: e.target.value })}
+              className="w-full p-3 border border-black rounded-md"
             />
             <select
               name="service"
               id=""
-              className="w-full p-3 border border-gray-200 rounded-md"
+              onChange={(e) => setForm({ ...form, service: e.target.value })}
+              className="w-full p-3 border border-black rounded-md"
             >
               <option value="" disabled selected>
                 Select Service
@@ -37,7 +67,8 @@ const EnquiryCard = () => {
               type="text"
               placeholder="Message"
               name="message"
-              className="w-full p-3 border border-gray-200 rounded-md"
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              className="w-full p-3 border border-black rounded-md"
             />
             <button
               type="submit"

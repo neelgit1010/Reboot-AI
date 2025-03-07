@@ -91,7 +91,7 @@ const AboutSection = () => {
             className="w-full h-full object-cover rounded-lg"
           />
 
-          <div className="absolute left-0 bottom-0 flex justify-center items-center w-[60%]">
+          <div className="absolute left-0 bottom-0 flex justify-start items-center w-[60%]">
             <Image
               src="/global/Rectangle.png"
               alt="about"
@@ -99,7 +99,7 @@ const AboutSection = () => {
               height={500}
               className="w-auto h-auto"
             />
-            <h1 className="absolute text-white font-semibold text-lg md:text-3xl">12+ Years of Trust</h1>
+            <h1 className="absolute p-4 text-white font-semibold text-lg md:text-3xl">12+ Years of Trust</h1>
           </div>
         </div>
       </div>
